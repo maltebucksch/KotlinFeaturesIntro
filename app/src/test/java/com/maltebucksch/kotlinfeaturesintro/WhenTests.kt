@@ -7,16 +7,16 @@ import org.junit.Test
  * Created by Malte Bucksch on 26/10/2017.
  */
 
-class ControlFlow {
+class WhenTests {
     @Test
-    fun testWhen() {
+    fun testReceivedCorrectAmountOfMoney() {
         assertEquals(giveDuplonesToPirate(0), "Wo ist dein Geld?")
-        assertEquals(giveDuplonesToPirate(0), "Zu wenig, du Landratte!")
-        assertEquals(giveDuplonesToPirate(0), "Deal")
-        assertEquals(giveDuplonesToPirate(0), "Arr! Deal")
+        assertEquals(giveDuplonesToPirate(2), "Zu wenig, du Landratte!")
+        assertEquals(giveDuplonesToPirate(4), "Deal")
+        assertEquals(giveDuplonesToPirate(100), "Arr! Deal")
     }
 
-    fun giveDuplonesToPirate(duploneAmount: Int): String {
+    private fun giveDuplonesToPirate(duploneAmount: Int): String {
         return when (duploneAmount) {
             0 -> "Wo ist dein Geld?"
             1, 2 -> "Zu wenig, du Landratte!"
